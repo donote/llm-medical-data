@@ -1,0 +1,2 @@
+openai==0.27.6
+progress==1.6
