@@ -2,6 +2,7 @@
 
 医学领域大模型微调数据收集主要参考：[几篇关于医学领域大模型的论文或项目](https://zhuanlan.zhihu.com/p/629591953)
 
+> 注:大于100M的文件进行了zip压缩
 
 ## 1. chinese_medical_dialogue_data
 **项目地址**：https://github.com/Toyhom/Chinese-medical-dialogue-data
@@ -66,7 +67,7 @@ api_keys=[]
 
 
 |文件名|样本量|
-|:-:|:-:|:-:|
+|:-:|:-:|
 |GenMedGPT-5k.json| 2,354 |
 |iCliniq.json| 7342 |
 |HealthCareMagic-100k.json| 24,665 |
