@@ -11,7 +11,7 @@
 3. 输出处理后的数据，格式为list，每个元素为一个json, 并保存为json文件
 示例如下：
     text: <|user|>你好<|eos|><|ai|>欢迎提问 References: - https://www.nhs.uk/conditions/coronavirus-covid-19/<|eos|><|eod|>
-    json: {'input': '你好', 'output': '欢迎提问', 'instruct': 'https://www.nhs.uk/conditions/coronavirus-covid-19/'}
+    json: {'input': '你好', 'output': '欢迎提问', 'instruction': 'https://www.nhs.uk/conditions/coronavirus-covid-19/'}
 """
 
 import re
@@ -45,7 +45,7 @@ class OpenGPT_Trans(object):
         output_text = output_text.replace("References:\n- " + instruct_text, "").strip()
 
         self.count += 1 # 用于标记每条数据的id
-        instr_dict = {'input': instruct_text, 'output': output_text, 'instruct': input_text, 'raw_data_id': self.count}
+        instr_dict = {'input': instruct_text, 'output': output_text, 'instruction': input_text, 'raw_data_id': self.count}
         return instr_dict
 
     def _transf_process_text(self, rd_csv_path, fc=None):
@@ -65,7 +65,7 @@ class OpenGPT_Trans(object):
         # 4. 保存处理后的数据
         with open(wr_json_path, 'w', encoding='utf-8') as f:
             f.write(processed_data_json)
-        print(f'数据已保存至 {wr_json_path}')
+        print(f'总数据量 {len(processed_data)}\n数据已保存至 {wr_json_path}')
         self.count = 0
     
     def _task_process_text(self, text):
@@ -73,7 +73,7 @@ class OpenGPT_Trans(object):
         output_text = find_between(text, "<|ai|>", "<|eos|>")
 
         self.count += 1 # 用于标记每条数据的id
-        instr_dict = {'input': input_text, 'output': output_text, 'instruct': '', 'raw_data_id': self.count}
+        instr_dict = {'input': input_text, 'output': output_text, 'instruction': '', 'raw_data_id': self.count}
         return instr_dict
 
     def tqa(self, rd_csv_path):
