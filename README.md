@@ -109,9 +109,15 @@ References:
 - https://www.nhs.uk/conditions/Blood-pressure-(high)/Pages/Introduction.aspx <|eos|> <|eod|>",0
 ```
 
+- 使用```scripts```中的脚本转换为```standford-alpaca```微调格式的json描述样本
+
+```bash
+python scripts/trans_opengpt_data.py tqa opengpt_data/prepared_generated_data_for_nhs_uk_qa.csv
+python scripts/trans_opengpt_data.py ttask opengpt_data/prepared_generated_data_for_medical_tasks.csv
+```
+
 # todo
 
 - 英文语料翻译成中文
-- csv格式语料转换为standford-alpaca格式json描述
 - 持续补充其他医学训练语料
 
