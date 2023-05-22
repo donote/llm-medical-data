@@ -126,9 +126,14 @@ python scripts/csv2json_opengpt_data.py ttask opengpt_data/prepared_generated_da
 python scripts/csv2json_chinese_medical_dialogue_data.py chinese_medical_dialogue_data/sample_h100.csv
 ```
 
+# 英文语料利用google翻译接口翻译成中文
+
+使用```scripts```中的脚本```en2zh_trans_google.py```调用google在线翻译，示例：
+
+```bash
+python scripts/en2zh_trans_google.py doctorchat_data/sample_h12.json
+```
+
 
 # todo
-
-- 英文语料翻译成中文
 - 持续补充其他医学训练语料
-
