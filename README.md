@@ -116,14 +116,14 @@ References:
 - 转换opengpt_data中的csv到json
 
 ```bash
-python scripts/trans_opengpt_data.py tqa opengpt_data/prepared_generated_data_for_nhs_uk_qa.csv
-python scripts/trans_opengpt_data.py ttask opengpt_data/prepared_generated_data_for_medical_tasks.csv
+python scripts/csv2json_opengpt_data.py tqa opengpt_data/prepared_generated_data_for_nhs_uk_qa.csv
+python scripts/csv2json_opengpt_data.py ttask opengpt_data/prepared_generated_data_for_medical_tasks.csv
 ```
 
 - 转换chinese_medical_dialogue_data中的csv到json, 示例：
 
 ```bash
-python scripts/trans_chinese_medical_dialogue_data.py chinese_medical_dialogue_data/sample_h100.csv
+python scripts/csv2json_chinese_medical_dialogue_data.py chinese_medical_dialogue_data/sample_h100.csv
 ```
 
 
